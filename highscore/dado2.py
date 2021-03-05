@@ -6,3 +6,5 @@ def dado():
     return valor
 a = dado()
 print("valor:", a)
+
+    
