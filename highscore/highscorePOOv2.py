@@ -219,8 +219,9 @@ Player1 = Tablero("Joaco")
 Player1.gen_tablero()
 used = [] # lista de posiciones usadas
 disp = pos_lugares[:]
-
-print("Inicia el Juego!")   
+reminder = "Recuerda, las columnas son letras y las filas son números"
+print("Inicia el Juego!")
+print(reminder)   
 Player1.print_tablero() 
 for i in range(1,26):
     print(f"-+-+-+- RONDA {i} -+-+-+-")
@@ -238,6 +239,7 @@ for i in range(1,26):
             print("Posición inválida, intenta de nuevo.")
         if coor in used:
             print(f"Ya colocaste un número en la posición {coor}.")
+            print(reminder)
         else:
             Player1.colocar(coor, valor)
             print(f"Pusiste un {valor} en la posición {coor}.")
