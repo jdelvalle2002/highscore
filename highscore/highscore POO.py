@@ -23,11 +23,12 @@ class Tablero:
         a = random.randint(1,6)
         b = random.randint(1,6)
         valor = a + b
-        return valor    
-
-
-
-
+        return valor
+    def colocar(self,pos,num):
+        col = pos[0]
+        fil = int(pos[1])
+        col = "abcde".find(col)
+        self.matriz[fil-1][col] = num
 
 
 
@@ -73,9 +74,9 @@ def unpar(fila):
     pass
 
 escalas7 = escalas_7()
-print(escalas7)
+#print(escalas7)
 escalasNo7 = escalas_no7()
-print(escalasNo7)
+#print(escalasNo7)
 # acá sacamos los puntajes
 def contar_puntos(tablero):
     # filas
@@ -87,10 +88,35 @@ def contar_puntos(tablero):
     pass
 
 
-times = contar(valores)
+#times = contar(valores)
 #print(times)
 
+Player1 = Tablero("Joaco")
+Player1.gen_tablero()
+used = [] # lista de posiciones usadas
+disp = pos_lugares[:]
+for i in range(1,26):
+    print(f"-+-+-+- RONDA {i} -+-+-+-")
+    valor = dado()
+    print(f"Salió el: {valor}")
+    go = True
+    while go:
+        print("Posiciones diponibles:")
+        print(disp)
+        jug = input("En qué casillero quieres ponerlo?: ")
+        coor = jug.strip().lower()
+        if coor not in pos_lugares:
+            print("Posición inválida, intenta de nuevo.")
+        else:
+            if coor not in used:
+                Player1.colocar(coor, valor)
+                print(f"Pusiste un {valor} en la posición {coor}.")
+                disp.remove(coor)
+                go = False
+            else:
+                print(f"Ya colocaste un número en la posición {coor}.") 
+print("FIN DEL JUEGO\nContemos el puntaje...")
+print("Tablero del jugador")
 
-while True:
-    lol = 0
-    break
+for linea in Player1.matriz:
+    print(linea)
