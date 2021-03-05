@@ -19,3 +19,5 @@ Las combinaciones tienen los siguientes puntajes:
 **Las diagonales suman el doble de puntos**
 
 Cuando se termian de rellenar el tablero se cuentan los puntos totales, el mayor puntaje gana.
+
+[Acá puedes aprender más del juego (si sabes holandés...)](https://www.libble.eu/ravensburger-high-score/c582698/)
