@@ -4,7 +4,8 @@
 # funcionando para un jugador
 # copia que imprime los puntajes
 # incluye color en el output
-import random, termcolor
+import random
+from colorama import *
 
 class Tablero:
     def __init__(self, usuario):
@@ -41,7 +42,10 @@ class Tablero:
         t = self.matriz[:]
         # print("Tablero actual")
         top = "#"*16
+        second = "   a  b  c  d  e"
         print(top)
+        print(second)
+        co = 1
         for l in t:
             for i in range(len(l)):
                 f = lambda x : fill(str(x))
@@ -49,8 +53,9 @@ class Tablero:
                 l[i] = f(c)
 
             s = "|".join(l)
-            s = "|"+s+"|"
+            s = str(co) + ") |"+s+"|"
             print(s)
+            co += 1
         print(top)        
 
 pos_lugares = ["a1","a2","a3","a4","a5","b1","b2","b3","b4","b5", 
@@ -132,24 +137,32 @@ def contar_puntos(tablero):
         return False            
     e7 = escalas_7()
     en7 = escalas_no7()
+    for x in range(len(e7)):
+        e7[x] = list(map(str, e7[x]))
+    for x in range(len(en7)):
+        en7[x] = list(map(str, en7[x]))
+
+    #print(e7)
+    #print(en7)
     
     # filas
     quintetos = tablero[:]
     for i in range(5):
         columna = []
         for j in range(5):
-            columna.append(tablero[j][i])
+            columna.append(tablero[j][i].strip())
         quintetos.append(columna)    
     diag = []
     line = []
     line2 = []
     for i in range(5):
-        p = tablero[i][i]
-        p2 = tablero[-(i+1)][i]
+        p = tablero[i][i].strip()
+        p2 = tablero[-(i+1)][i].strip()
         line.append(p)
-        line2.append(p2)
+        line2.append(p2)    
     diag.append(line)
-    diag.append(line2)    
+    diag.append(line2)
+    # diag.append(["2","4","6","5","3"]) #debug
     for fila in quintetos:
         f  = sorted(fila)
         # ojo, acá importa el orden en q se llaman las funciones
@@ -229,7 +242,7 @@ used = [] # lista de posiciones usadas
 disp = pos_lugares[:]
 reminder = "Recuerda, las columnas son letras y las filas son números"
 print("#$%&#$%&#$%&#$%&#$%&#$%&#$%&#$%&#$%&#$%&#$%&#$%&#$%&#$%&#$%&#$%&#$%&3")
-print(termcolor.colored("Inicia el Juego!", "green"))
+print(Fore.GREEN  + "Inicia el Juego!" + Style.RESET_ALL)
 print(reminder)   
 Player1.print_tablero() 
 for i in range(1,26):
@@ -243,11 +256,13 @@ for i in range(1,26):
         jug = input("En qué casillero quieres ponerlo?: ")
         coor = jug.strip().lower()
         if coor not in pos_lugares:
-            print(termcolor.colored("Posición inválida, intenta de nuevo.", "red"))
+            print(Fore.RED + "Posición inválida, intenta de nuevo."+ Style.RESET_ALL)
+
         else:
             if coor in used:
-                print(termcolor.colored(f"Ya colocaste un número en la posición {coor}.", "red"))
-                print(reminder)
+                print(Fore.RED + f"Ya colocaste un número en la posición {coor}.")
+                print(reminder + Style.RESET_ALL)
+                
             else:
                 Player1.colocar(coor, valor)
                 print(f"Pusiste un {valor} en la posición {coor}.")
@@ -261,5 +276,8 @@ print("Tablero final del jugador")
 
 Player1.print_tablero()
 Player1.p = contar_puntos(Player1.matriz)
-string = termcolor.cprint(f"El puntaje es {Player1.p}", "white" , "on_blue")
+print(Style.RESET_ALL)
+string = Back.CYAN + Fore.BLACK + f"El puntaje total es {Player1.p} " + Style.RESET_ALL
+
 print(string)
+#fin = input("Presiona cualquier tecla para salir")
