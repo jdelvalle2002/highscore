@@ -1,7 +1,10 @@
 # Highscore
 *Intentando recrear el juego de ravensburger "highscore"*
 
-**¿En qué consiste?**
+El archivo principal es `highscorePOOv2.py`.
+
+##¿En qué consiste?
+
 Para el juego necesitas un tablero de 5x5, dos dados y un lápiz (tranqui, todos están "incluidos").
 Cada ronda se lanzan los dados, y el número que sale debe ser anotado en el tablero, intentando formar combinaciones con los números en la correspondiente columna, fila, o diagonal.
 
