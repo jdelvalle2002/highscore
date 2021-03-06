@@ -1,8 +1,10 @@
-# simulador del juego highscore
+# 5 de marzo de 2021
+# simulador del juego highscore de Ravensburger
 # juego con tabla de 5x5
 # funcionando para un jugador
-# copia que imprime los puntakjes
-import random
+# copia que imprime los puntajes
+# incluye color en el output
+import random, termcolor
 
 class Tablero:
     def __init__(self, usuario):
@@ -31,15 +33,21 @@ class Tablero:
         col = "abcde".find(col)
         self.matriz[fil-1][col] = num
     def print_tablero(self):
+        def fill(s):
+            if len(s) < 2:
+                return " "+s
+            else:
+                return s    
         t = self.matriz[:]
         # print("Tablero actual")
-        top = "#"*11
+        top = "#"*16
         print(top)
         for l in t:
             for i in range(len(l)):
-                f = lambda x : str(x)
+                f = lambda x : fill(str(x))
                 c = l[i]
                 l[i] = f(c)
+
             s = "|".join(l)
             s = "|"+s+"|"
             print(s)
@@ -220,7 +228,8 @@ Player1.gen_tablero()
 used = [] # lista de posiciones usadas
 disp = pos_lugares[:]
 reminder = "Recuerda, las columnas son letras y las filas son números"
-print("Inicia el Juego!")
+print("#$%&#$%&#$%&#$%&#$%&#$%&#$%&#$%&#$%&#$%&#$%&#$%&#$%&#$%&#$%&#$%&#$%&3")
+print(termcolor.colored("Inicia el Juego!", "green"))
 print(reminder)   
 Player1.print_tablero() 
 for i in range(1,26):
@@ -233,24 +242,24 @@ for i in range(1,26):
         print(disp)
         jug = input("En qué casillero quieres ponerlo?: ")
         coor = jug.strip().lower()
-        if type(coor[1]) != int:
-            coor = coor[::-1]
         if coor not in pos_lugares:
-            print("Posición inválida, intenta de nuevo.")
-        if coor in used:
-            print(f"Ya colocaste un número en la posición {coor}.")
-            print(reminder)
+            print(termcolor.colored("Posición inválida, intenta de nuevo.", "red"))
         else:
-            Player1.colocar(coor, valor)
-            print(f"Pusiste un {valor} en la posición {coor}.")
-            disp.remove(coor)
-            used.append(coor)
-            print("Tablero actual")
-            Player1.print_tablero()
-            go = False
+            if coor in used:
+                print(termcolor.colored(f"Ya colocaste un número en la posición {coor}.", "red"))
+                print(reminder)
+            else:
+                Player1.colocar(coor, valor)
+                print(f"Pusiste un {valor} en la posición {coor}.")
+                disp.remove(coor)
+                used.append(coor)
+                print("Tablero actual")
+                Player1.print_tablero()
+                go = False
 print("FIN DEL JUEGO\nContemos el puntaje...")
 print("Tablero final del jugador")
 
 Player1.print_tablero()
 Player1.p = contar_puntos(Player1.matriz)
-print("El puntaje es", Player1.p)
+string = termcolor.cprint(f"El puntaje es {Player1.p}", "white" , "on_blue")
+print(string)
