@@ -6,7 +6,7 @@
 # incluye color en el output
 import random
 from colorama import *
-
+init(autoreset=True) # nuevo
 class Tablero:
     def __init__(self, usuario):
 
@@ -42,7 +42,7 @@ class Tablero:
         t = self.matriz[:]
         # print("Tablero actual")
         top = "#"*16
-        second = "   a  b  c  d  e"
+        second = "    a  b  c  d  e"
         print(top)
         print(second)
         co = 1
