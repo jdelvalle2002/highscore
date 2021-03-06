@@ -21,3 +21,7 @@ Las combinaciones tienen los siguientes puntajes:
 Cuando se termian de rellenar el tablero se cuentan los puntos totales, el mayor puntaje gana.
 
 [Acá puedes aprender más del juego (si sabes holandés...)](https://www.libble.eu/ravensburger-high-score/c582698/)
+
+
+
+Requiere la instalación de termcolor (`pip install termcolor`)
