@@ -233,7 +233,7 @@ def clickOn(x,y):
     buttons[x][y]['state'] = 'disabled'
     buttons[x][y].config(relief=tkinter.SUNKEN)
     Board.matriz[x][y] = valor
-    Board.print_tablero()
+    #Board.print_tablero()
     valor = dado()
     rounds += 1
     ronda_t = f"Ronda {rounds}"
