@@ -1,4 +1,7 @@
 # basado en https://codereview.stackexchange.com/questions/191550/minesweeper-in-python-tkinter
+
+# juego hecho por jdelvalle2002
+
 import tkinter, configparser, os, random, tkinter.messagebox, tkinter.simpledialog, webbrowser
 from tkinter.font import BOLD
 from tkinter.constants import LEFT
