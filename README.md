@@ -1,7 +1,7 @@
 # Highscore
 *Intentando recrear el juego de ravensburger "highscore"*
 
-El archivo principal es `highscorePOOv2.py`.
+El archivo principal es `highscore-beta1.py`.
 
 ## ¿En qué consiste?
 
@@ -27,4 +27,4 @@ Cuando se termian de rellenar el tablero se cuentan los puntos totales, el mayor
 
 
 
-Requiere la instalación de la libreria colorama (`pip install colorama`)
+Requiere la instalación de la libreria `tkinter` y `webbrowser` (probablemente ya las tienes).
