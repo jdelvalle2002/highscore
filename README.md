@@ -1,7 +1,7 @@
 # Highscore
 *Intentando recrear el juego de ravensburger "highscore" en Python*
 
-El archivo principal es `highscore-beta1.py`. Teniendo ese archivo y Python con las librerías necesarias ya puedes jugar.
+El archivo principal es `highscore-beta2.py`. Teniendo ese archivo y Python con las librerías necesarias ya puedes jugar.
 
 ## ¿En qué consiste?
 
