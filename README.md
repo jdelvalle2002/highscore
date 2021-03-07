@@ -19,9 +19,10 @@ Las combinaciones tienen los siguientes puntajes:
 - Full: 8 puntos
 - Escala con 7: 8 puntos
 - Escala sin 7*: 12 puntos
+
 **Las diagonales suman el doble de puntos**        
 
-(*) Las escalas sin 7 tiene más puntaje porque el 7 tiene más probabilidades de salir, entonces es más difícil construir una escala de esas características.
+(*) *Las escalas sin 7 tienen más puntaje porque el 7 tiene más probabilidades de salir, entonces es más difícil construir una escala de esas características.*
 
 Cuando se termian de rellenar el tablero se cuentan los puntos totales, el mayor puntaje gana.
 
