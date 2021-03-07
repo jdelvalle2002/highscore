@@ -119,27 +119,27 @@ class Tablero:
         for i in range(5):
             columna = []
             for j in range(5):
-                columna.append(tablero[j][i].strip())
+                columna.append(tablero[j][i]) ##### .strip()
             quintetos.append(columna)    
         diag = []
         line = []
         line2 = []
         for i in range(5):
-            p = tablero[i][i].strip()
-            p2 = tablero[-(i+1)][i].strip()
+            p = tablero[i][i]#.strip()
+            p2 = tablero[-(i+1)][i]#.strip()
             line.append(p)
             line2.append(p2)    
         diag.append(line)
         diag.append(line2)
         #diag.append(["2","4","6","5","3"]) #debug
         for fila in quintetos:
-            f  = sorted(fila)
+            f  = sorted(list(map(int,fila)))
             # ojo, acá importa el orden en q se llaman las funciones
             pts = 0
-            if list(map(str,f)) in e7:
+            if f in e7:
                 pts = 8
                 puntos += pts   
-            elif list(map(str,f)) in en7:
+            elif f in en7:
                 pts = 12
                 puntos += pts
             elif full_f(f): # acá los full 
@@ -162,11 +162,11 @@ class Tablero:
                 puntos += pts
             m = f"La fila/columna {fila} suma {pts} pts"    
             mensajes.append(m)
-            print(m)                   
+            #print(m)                   
         # diagonales
         for fila in diag:
             f  = sorted(list(map(int,fila)))
-            print(f)
+            #print(f)
             # ojo, acá importa el orden en q se llaman las funciones
             pts = 0
             if f in e7:
@@ -195,7 +195,7 @@ class Tablero:
                 puntos += pts
             m = f"La diagonal {fila} suma {pts} pts"
             mensajes.append(m)
-            print(m)
+            #print(m)
         #print("Diagonales")
         #print(diag)
         #print("Filas y col")
@@ -233,13 +233,14 @@ def clickOn(x,y):
     buttons[x][y]['state'] = 'disabled'
     buttons[x][y].config(relief=tkinter.SUNKEN)
     Board.matriz[x][y] = valor
-    Board.print_tablero()
-    valor = dado()
+    #Board.print_tablero()
+    
     rounds += 1
     ronda_t = f"Ronda {rounds}"
-    print(ronda_t)
+    #print(ronda_t)
     ronda.config(text=ronda_t)
     #ronda.place(x=160,y=435)
+    valor = dado()
     t = f"Dado: {valor}"
     el_dado.config(text= t)
     if rounds == 26:
@@ -256,10 +257,10 @@ def restartGame():
     global gameover, rounds, el_dado, ronda_t, Board
     Board.gen_tablero()
     rounds = 1        
-    valor = dado()
+    
     ronda_t = f"Ronda {rounds}"
     ronda.config(text=ronda_t)
-
+    valor = dado()
     t = f"Dado: {valor}"
     el_dado.config(text= t)
     prepareWindow()
