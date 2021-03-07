@@ -239,7 +239,7 @@ def prepareWindow():
             buttons[x].append(b)
 
 def help_button():
-    webbrowser.open("https://github.com/jdelvalle2002/highscore/blob/main/README.md")
+    webbrowser.open("https://highscore-on-python.netlify.app/")
 def clickOn(x,y):
     global rounds, buttons, colors, rows, cols, valor, Board, ronda, el_dado
     

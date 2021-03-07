@@ -222,7 +222,7 @@ def prepareWindow():
             buttons[x].append(b)
 
 def help_button():
-    webbrowser.open("https://github.com/jdelvalle2002/highscore/blob/main/README.md")
+    webbrowser.open("https://highscore-on-python.netlify.app/")
 def clickOn(x,y):
     global rounds, buttons, colors, rows, cols, valor, Board, ronda, el_dado
     
@@ -233,7 +233,7 @@ def clickOn(x,y):
     buttons[x][y]['state'] = 'disabled'
     buttons[x][y].config(relief=tkinter.SUNKEN)
     Board.matriz[x][y] = valor
-    #Board.print_tablero()
+    Board.print_tablero()
     valor = dado()
     rounds += 1
     ronda_t = f"Ronda {rounds}"
