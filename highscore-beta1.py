@@ -203,14 +203,7 @@ class Tablero:
         self.msj = mensajes
         return puntos
 
-'''menubar = tkinter.Menu(window)
-menu1 = tkinter.Menu(window, tearoff=0)
-#menusize.add_separator()
-def popup():
-    tkinter.messagebox.showinfo("Game Over", "Abriste el menú de ayuda")
-menu1.add_command(label="Help", command=popup())
-menubar.add_cascade(label="Help", menu=menu1)
-window.config(menu=menubar)'''
+
 def prepareWindow():
     global rows, cols, buttons
     res = tkinter.Button(window, text="Restart", command=restartGame).grid(row=0, column=0, columnspan=cols, sticky=tkinter.N+tkinter.W+tkinter.S+tkinter.E)
