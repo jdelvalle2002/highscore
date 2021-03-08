@@ -230,7 +230,7 @@ def clickOn(x,y):
     
     buttons[x][y]["text"] = str(valor) #str(field[x][y])
     Board.matriz[x][y] = valor
-    print(valor)
+    #print(valor)
     #buttons[x][y].config(disabledforeground=colors[field[x][y]])
     
             
