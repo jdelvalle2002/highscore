@@ -6,8 +6,8 @@ import tkinter, configparser, os, random, tkinter.messagebox, tkinter.simpledial
 #estilo = None
 valor = None
 window = tkinter.Tk()
-window.iconbitmap('icon.ico')
-window.resizable(0,0)
+#window.iconbitmap('icon.ico')
+#window.resizable(0,0)
 inicio = tkinter.Frame(window, bd=25)
 inicio.config(bg="lightblue") 
 ancho = 440
