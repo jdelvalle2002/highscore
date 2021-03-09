@@ -36,6 +36,3 @@ Cuando se termian de rellenar el tablero se cuentan los puntos totales, el mayor
 Requiere la instalación de la libreria `tkinter` y `webbrowser` (probablemente ya las tienes).
 
 
-
-
-Para el multiplayer se requiere `dados.txt`.
