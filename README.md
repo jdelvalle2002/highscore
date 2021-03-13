@@ -4,7 +4,7 @@
 
 El archivo principal es `highscore-multicovaPOO.py`. Teniendo ese archivo y Python con las librerías necesarias ya puedes jugar... Y en multijugador!!!
 
-¡Actualmente también hay una versión disponible sin necesidad de Python! Para ello ir a la sección de [releases](https://github.com/jdelvalle2002/highscore/releases). Ahí encontrarás versiones `.exe`,`.app` y para Linux.
+¡Actualmente también hay una versión disponible sin necesidad de Python! Para ello ir a la sección de [releases](https://github.com/jdelvalle2002/highscore/releases). Ahí encontrarás versiones `.exe`,`.app` y para Linux. Si quieres revisar el código fuente para estas versiones puedes revisar la carpeta `release3` del repositorio. En la carpeta `highscore` puedes encontrar versiones primitivas del juego y residuos varios.
 
 Puedes encontrar también toda esta información en el [sitio web creado para el juego](https://highscore-on-python.netlify.app/).
 ## ¿En qué consiste?
