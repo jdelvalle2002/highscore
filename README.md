@@ -1,5 +1,6 @@
 # Highscore
 *Intentando recrear el juego de ravensburger "highscore" en Python*
+
 *Update: objetivo logrado*
 
 
