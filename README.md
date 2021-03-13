@@ -4,8 +4,9 @@
 
 El archivo principal es `highscore-multicovaPOO.py`. Teniendo ese archivo y Python con las librerías necesarias ya puedes jugar... Y en multijugador!!!
 
-¡Actualmente también hay una versión disponible sin necesidad de Python! Prueba con el archivo `PlayHighscore!-V2.exe`.
+¡Actualmente también hay una versión disponible sin necesidad de Python! Para ello ir a la sección de [releases](https://github.com/jdelvalle2002/highscore/releases). Ahí encontrarás versiones `.exe`,`.app` y para Linux.
 
+Puedes encontrar también toda esta información en el [sitio web creado para el juego](https://highscore-on-python.netlify.app/).
 ## ¿En qué consiste?
 
 Para el juego necesitas un tablero de 5x5, dos dados y un lápiz (tranqui, todos están "incluidos").
