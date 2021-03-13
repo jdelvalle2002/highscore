@@ -1,5 +1,6 @@
 # Highscore
 *Intentando recrear el juego de ravensburger "highscore" en Python*
+*Update: objetivo logrado*
 
 
 El archivo principal es `highscore-multicovaPOO.py`. Teniendo ese archivo y Python con las librerías necesarias ya puedes jugar... Y en multijugador!!!
